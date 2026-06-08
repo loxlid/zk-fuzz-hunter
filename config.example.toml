@@ -1,0 +1,16 @@
+# ZK-FUZZ-HUNTER — example configuration.
+#
+# Copy to `config.toml` and tweak. All fields are optional; the values below
+# are the built-in defaults, so an empty file (or no file at all) works too.
+
+# Random-search budget: how many candidate witnesses to try before declaring a
+# system clean. Structured mutations (field negation, small perturbations,
+# cross-signal copies) run first and are cheap; this bounds the random phase.
+iterations = 100000
+
+# RNG seed, so every finding is reproducible from the report.
+seed = 0xF1E1D
+
+# Prime field to fuzz over. Only the u128-safe Mersenne prime (2^61 - 1) is
+# wired up in this educational model.
+field = "mersenne61"

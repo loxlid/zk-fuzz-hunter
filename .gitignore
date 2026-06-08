@@ -1,0 +1,12 @@
+# ---- Rust ----
+target/
+
+# ---- Secrets & local config ----
+.env
+config.toml
+
+# ---- Editor / OS ----
+.DS_Store
+.idea/
+.vscode/
+*.log

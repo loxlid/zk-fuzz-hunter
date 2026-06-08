@@ -1,0 +1,37 @@
+[package]
+name = "zk-fuzz-hunter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Loxee"]
+description = "A circuit-constraint fuzzing harness that hunts for under-constrained signals in R1CS systems — the most dangerous & subtle bug class in zero-knowledge circuits"
+license = "MIT"
+readme = "../README.md"
+repository = "https://github.com/loxlid/zk-fuzz-hunter"
+
+[[bin]]
+name = "zk-fuzz-hunter"
+path = "src/main.rs"
+
+[dependencies]
+# Config + serde
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Fuzzing RNG (seeded, reproducible)
+rand = "0.8"
+
+# Big integer math (available for larger fields; the default field is u128-safe)
+num-bigint = "0.4"
+num-traits = "0.2"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+approx = "0.5"
