@@ -1,5 +1,7 @@
 # zk-fuzz-hunter
 
+![CI](https://github.com/loxlid/zk-fuzz-hunter/actions/workflows/ci.yml/badge.svg) ![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 A circuit-constraint **fuzzing harness** that hunts for **under-constrained signals** in R1CS systems — the most dangerous and subtle bug class in zero-knowledge circuits. It models a simplified constraint system over a prime field, then fuzzes witness assignments to detect when a *malicious* witness satisfies every constraint yet differs from the honest one.
 
 > ⚠️ **Educational / demo harness.** This is a *simplified* model of R1CS over a small u128-safe prime field. It illustrates the under-constrained bug class on toy systems — it is **not** a production circom/snark analyzer and makes no completeness guarantees. **Nothing here is a security audit.**
